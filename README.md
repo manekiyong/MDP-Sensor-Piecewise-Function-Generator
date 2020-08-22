@@ -9,3 +9,24 @@ Usage:
 
 Note(s):
 1. Any empty rows in excel sheet will be dropped. 
+
+
+Example output from `GenerateConvertToCM.py`:
+```
+double convertToCM(double val){
+        int dist;
+        if(val>587)
+                dist=5;
+        else if(val<=587&&val>393)      //5cm to 10.0cm
+                dist=(val-781.0)/-38.8;
+        else if(val<=393&&val>305)      //10.0cm to 15.0cm
+                dist=(val-569.0)/-17.6;
+        else if(val<=305&&val>277)      //15.0cm to 20.0cm
+                dist=(val-389.0)/-5.6;
+        else if(val<=277&&val>273)      //20.0cm to 25.0cm
+                dist=(val-293.0)/-0.8;
+        else
+                dist=25.0;
+        return dist;
+}
+```
