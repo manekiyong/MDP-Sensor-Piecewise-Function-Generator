@@ -10,17 +10,16 @@ for i,rows in df.iterrows():
     if(i==0):
         prevcm=int(rows['cm'])
         prevval=int(rows['value'])
-        print("\tif(val>"+str(prevval)+")\n\t\tdist="+str(prevcm)+";")
+        print("\tif(val>"+str(prevval)+") dist="+str(prevcm)+";")
 
     else:
         dx=rows['cm']-prevcm
         dy=rows['value']-prevval
         m = dy/dx
         c = rows['value']-m*rows['cm']
-        print("\telse if(val<="+str(prevval)+"&&val>"+str(int(rows['value']))+")\t//"+str(prevcm)+"cm to "+str(rows['cm'])+"cm")
-        print("\t\tdist=(val-"+str(c)+")/"+str(m)+";")
+        print("\telse if(val<="+str(prevval)+"&&val>"+str(int(rows['value']))+") dist=(val-"+str(c)+")/"+str(m)+"; //"+str(prevcm)+"cm to "+str(rows['cm'])+"cm")
         prevval = int(rows['value'])
         prevcm = rows['cm']
         if(i==len(df)-1):
-            print("\telse\n\t\tdist="+str(rows['cm'])+";")
+            print("\telse dist="+str(rows['cm'])+";")
 print("\treturn dist;\n}")
