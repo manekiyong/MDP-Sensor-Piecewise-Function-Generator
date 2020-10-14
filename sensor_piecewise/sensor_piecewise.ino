@@ -1,14 +1,24 @@
-#define SNSR A0
+#define SNSR0 A0
+#define SNSR1 A1
+#define SNSR2 A2
+#define SNSR3 A3
+#define SNSR4 A4
+#define SNSR5 A5
 int sample = 30;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
 
 }
 
 void loop() {
   
-  Serial.println(sensorRead(sample, SNSR));
+  Serial.print(sensorRead(sample, SNSR0));  Serial.print("\t");
+  Serial.print(sensorRead(sample, SNSR1));  Serial.print("\t");
+  Serial.print(sensorRead(sample, SNSR2));  Serial.print("\t");
+  Serial.print(sensorRead(sample, SNSR3));  Serial.print("\t");
+  Serial.print(sensorRead(sample, SNSR4));  Serial.print("\t");
+  Serial.println(sensorRead(sample, SNSR5));
   // Serial.println(convertToCM(sensorRead(sample, SNSR))); //Uncomment only after function has been generated.
 
 }
