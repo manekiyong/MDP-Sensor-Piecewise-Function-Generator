@@ -1,9 +1,9 @@
-#define SNSR0 A0
-#define SNSR1 A1
-#define SNSR2 A2
-#define SNSR3 A3
-#define SNSR4 A4
-#define SNSR5 A5
+#define PS1 A0
+#define PS2 A1
+#define PS3 A2
+#define PS4 A3
+#define PS5 A4
+#define PS6 A5
 int sample = 30;
 
 void setup() {
@@ -13,12 +13,12 @@ void setup() {
 
 void loop() {
   
-  Serial.print(sensorRead(sample, SNSR0));  Serial.print("\t");
-  Serial.print(sensorRead(sample, SNSR1));  Serial.print("\t");
-  Serial.print(sensorRead(sample, SNSR2));  Serial.print("\t");
-  Serial.print(sensorRead(sample, SNSR3));  Serial.print("\t");
-  Serial.print(sensorRead(sample, SNSR4));  Serial.print("\t");
-  Serial.println(sensorRead(sample, SNSR5));
+  Serial.print(sensorRead(sample, PS1));  Serial.print("\t");
+  Serial.print(sensorRead(sample, PS2));  Serial.print("\t");
+  Serial.print(sensorRead(sample, PS3));  Serial.print("\t");
+  Serial.print(sensorRead(sample, PS4));  Serial.print("\t");
+  Serial.print(sensorRead(sample, PS5));  Serial.print("\t");
+  Serial.println(sensorRead(sample, PS6));
   // Serial.println(convertToCM(sensorRead(sample, SNSR))); //Uncomment only after function has been generated.
 
 }
